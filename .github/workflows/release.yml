@@ -32,3 +32,4 @@ jobs:
         artifacts: "target/*.jar"
         prerelease: ${{ endsWith( github.ref_name, '-SNAPSHOT' ) }}
         makeLatest: ${{ ! endsWith( github.ref_name, '-SNAPSHOT' ) }}
+        allowUpdates: "true"
