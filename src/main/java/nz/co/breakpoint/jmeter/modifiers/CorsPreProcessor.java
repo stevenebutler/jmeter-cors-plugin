@@ -1,5 +1,6 @@
 package nz.co.breakpoint.jmeter.modifiers;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Spliterators;
@@ -39,13 +40,13 @@ public class CorsPreProcessor extends AbstractTestElement implements PreProcesso
     public static final String forbiddenMethods = "CONNECT|TRACE|TRACK";
     public static final String methodOverrideHeaders = "x-http-method|x-http-method-override|x-method-override";
 
-    final static Map<String, String> safeListedHeaders = Map.of(
-            "accept", ".*",
-            "accept-language", ".*",
-            "content-language", ".*",
-            "content-type", "(application/x-www-form-urlencoded|multipart/form-data|text/plain).*",
-            "range", "bytes=[0-9]+-[0-9]*"
-    );
+    final static Map<String, String> safeListedHeaders = new HashMap<>() {{
+            put("accept", ".*");
+            put("accept-language", ".*");
+            put("content-language", ".*");
+            put("content-type", "(application/x-www-form-urlencoded|multipart/form-data|text/plain).*");
+            put("range", "bytes=[0-9]+-[0-9]*");
+    }};
 
     public static final String forbiddenHeaders = String.join("|",
             "accept-charset",
