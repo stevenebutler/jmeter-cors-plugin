@@ -40,7 +40,7 @@ public class CorsPreProcessor extends AbstractTestElement implements PreProcesso
     public static final String forbiddenMethods = "CONNECT|TRACE|TRACK";
     public static final String methodOverrideHeaders = "x-http-method|x-http-method-override|x-method-override";
 
-    final static Map<String, String> safeListedHeaders = new HashMap<>() {{
+    final static Map<String, String> safeListedHeaders = new HashMap<String, String>() {{
             put("accept", ".*");
             put("accept-language", ".*");
             put("content-language", ".*");
