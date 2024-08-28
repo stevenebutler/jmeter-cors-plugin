@@ -11,7 +11,7 @@ public class CorsPreProcessorBeanInfo extends BeanInfoSupport {
         super(CorsPreProcessor.class);
 
         createPropertyGroup("Preflight", new String[]{
-                PREFLIGHT_LABEL_SUFFIX, CLEAR_EACH_ITERATION
+                PREFLIGHT_LABEL_SUFFIX
         });
         PropertyDescriptor p;
 
