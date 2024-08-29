@@ -25,7 +25,8 @@ public class CorsPreProcessorBeanInfo extends BeanInfoSupport {
 
         p = property(CLEAR_EACH_ITERATION);
         p.setValue(NOT_UNDEFINED, Boolean.TRUE);
-        p.setValue(DEFAULT, Boolean.TRUE);
+        p.setValue(DEFAULT, "");
+        p.setValue(TAGS, new String[]{ "", "True", "False" });
 
         p = property(DEFAULT_CACHE_EXPIRY);
         p.setValue(NOT_UNDEFINED, Boolean.TRUE);

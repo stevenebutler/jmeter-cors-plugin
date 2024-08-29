@@ -243,7 +243,10 @@ public class CorsPreProcessor extends AbstractTestElement
 
     @Override
     public void testIterationStart(LoopIterationEvent event) {
-        if (getClearEachIteration()) { // TODO JMeter 5.2 "same user on each iteration"
+        boolean sameUser = getThreadContext().getVariables().isSameUserOnNextIteration();
+        if (getClearEachIteration().isEmpty() && !sameUser
+                || "true".equalsIgnoreCase(getClearEachIteration())) {
+            log.debug("Clearing preflight cache");
             preflightCache.clear();
         }
     }
@@ -252,7 +255,7 @@ public class CorsPreProcessor extends AbstractTestElement
     public void setPreflightLabelSuffix(String suffix) { setProperty(PREFLIGHT_LABEL_SUFFIX, suffix); }
     public long getDefaultCacheExpiry() { return getPropertyAsLong(DEFAULT_CACHE_EXPIRY); }
     public void setDefaultCacheExpiry(long seconds) { setProperty(DEFAULT_CACHE_EXPIRY, seconds); }
-    public boolean getClearEachIteration() { return getPropertyAsBoolean(CLEAR_EACH_ITERATION); }
-    public void setClearEachIteration(boolean control) { setProperty(CLEAR_EACH_ITERATION, control); }
+    public String getClearEachIteration() { return getPropertyAsString(CLEAR_EACH_ITERATION); }
+    public void setClearEachIteration(String clear) { setProperty(CLEAR_EACH_ITERATION, clear); }
 
 }
