@@ -38,7 +38,8 @@ of any samplers that should make preflight requests.
 - *Clear cache each iteration?*: When set to "True" or "False" the preflight cache can be explicitly cleared or kept 
   between Thread iterations. When left blank, it is only cleared when Thread Group property
   "Same user on each iteration" is *not* set.   
-- *Default expiry (seconds)*:
+- *Default expiry (seconds)*: Cache expiry duration to apply when no "Access-Control-Max-Age" header is returned.
+  This allows overriding the 5 seconds the [specification](https://fetch.spec.whatwg.org/#http-access-control-max-age) defines.
 
 
 Installation
