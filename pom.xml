@@ -61,6 +61,12 @@
             <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>kg.apc</groupId>
+            <artifactId>jmeter-plugins-emulators</artifactId>
+            <version>0.4</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
 </project>

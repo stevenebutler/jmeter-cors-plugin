@@ -67,7 +67,7 @@ public class CorsPreProcessor extends AbstractTestElement
             put("accept-language", ".*");
             put("content-language", ".*");
             put("content-type", "(application/x-www-form-urlencoded|multipart/form-data|text/plain).*");
-            put("range", "bytes=[0-9]+-[0-9]*");
+            put("range", "bytes=([0-9]+-[0-9]*|-[0-9]+)");
     }};
 
     public static final String forbiddenHeaders = String.join("|",
