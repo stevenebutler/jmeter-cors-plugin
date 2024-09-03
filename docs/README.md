@@ -45,9 +45,17 @@ of any samplers that should make preflight requests.
 Installation
 ------------
 
+### Via [PluginsManager](https://jmeter-plugins.org/wiki/PluginsManager/)
+
+Under tab "Available Plugins", select "CORS Pre-Processor", then click "Apply Changes and Restart JMeter".
+
+### Via Package from [JMeter-Plugins.org](https://jmeter-plugins.org/)
+
+Extract the [zip package](https://jmeter-plugins.org/files/packages/tilln-cors-plugin-1.0.zip) into JMeter's home directory, then restart JMeter.
+
 ### Via Manual Download
 
-1. Copy the [jmeter-cors-plugin jar file](https://github.com/tilln/jmeter-cors-plugin/releases/download/1.0-SNAPSHOT/jmeter-cors-plugin-1.0-SNAPSHOT.jar) into JMeter's lib/ext directory.
+1. Copy the [jmeter-cors-plugin jar file](https://github.com/tilln/jmeter-cors-plugin/releases/download/1.0/jmeter-cors-plugin-1.0.jar) into JMeter's lib/ext directory.
 2. Restart JMeter.
 
 
