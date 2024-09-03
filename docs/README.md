@@ -22,9 +22,9 @@ unnecessary preflight requests, just as a browser would.
 Usage
 -----
 
-### Retry Post-Processor
+### CORS Pre-Processor
 
-Simply add a *CORS Pre-Processor* to the [Scope](https://jmeter.apache.org/usermanual/test_plan.html#scoping_rules)
+Simply add a *CORS Pre-Processor* to the [scope](https://jmeter.apache.org/usermanual/test_plan.html#scoping_rules)
 of any samplers that should make preflight requests. 
 
 ![settings](settings.png)
@@ -55,7 +55,8 @@ Limitations
 -----------
 
 - Minimum JMeter version 5.2.1
-- Timers, Post-Processors, and Assertions are **not** executed for the preflight request,
-  but only any Pre-Processors that precede the CORS Pre-Processor. 
-- CORS Pre-Processors are not "aware" of one another, so if a sampler's Scope contains more than one,
+- Timers, Pre-Processors, Post-Processors, and Assertions are **not** executed for the preflight request, but only once for the actual HTTP sampler.
+  The preflight request will be made by a clone of the actual sampler after the preceding Pre-Processors have run.
+  Pre-processors appearing **after** the CORS Pre-Processor will be effective for the actual sampler only.
+- CORS Pre-Processors are not "aware" of one another, so if a sampler's scope contains more than one,
   multiple preflight requests will be made.
